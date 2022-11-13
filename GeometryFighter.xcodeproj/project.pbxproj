@@ -12,6 +12,7 @@
 		77997FD229210BDF00F7CD7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77997FD029210BDF00F7CD7A /* Main.storyboard */; };
 		77997FD429210BE000F7CD7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77997FD329210BE000F7CD7A /* Assets.xcassets */; };
 		77997FD729210BE000F7CD7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77997FD529210BE000F7CD7A /* LaunchScreen.storyboard */; };
+		77997FEC2921118F00F7CD7A /* GeometryFighter.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 77997FEB2921118F00F7CD7A /* GeometryFighter.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		77997FD129210BDF00F7CD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77997FD329210BE000F7CD7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77997FD629210BE000F7CD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		77997FEB2921118F00F7CD7A /* GeometryFighter.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = GeometryFighter.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		77997FC929210BDF00F7CD7A /* PhysicsNinja */ = {
 			isa = PBXGroup;
 			children = (
+				77997FEB2921118F00F7CD7A /* GeometryFighter.scnassets */,
 				77997FCA29210BDF00F7CD7A /* AppDelegate.swift */,
 				77997FCE29210BDF00F7CD7A /* GameViewController.swift */,
 				77997FD029210BDF00F7CD7A /* Main.storyboard */,
@@ -123,6 +126,7 @@
 				77997FD729210BE000F7CD7A /* LaunchScreen.storyboard in Resources */,
 				77997FD429210BE000F7CD7A /* Assets.xcassets in Resources */,
 				77997FD229210BDF00F7CD7A /* Main.storyboard in Resources */,
+				77997FEC2921118F00F7CD7A /* GeometryFighter.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

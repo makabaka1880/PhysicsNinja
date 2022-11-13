@@ -16,6 +16,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        setupScene()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -29,8 +31,14 @@ class GameViewController: UIViewController {
             return .all
         }
     }
+    
     // MARK: SetupView()
     func setupView() {
         scnView = (self.view as! SCNView)
+    }
+    // MARK: SetupScene()
+    func setupScene() {
+        scnScene = SCNScene()
+        scnView.scene = scnScene
     }
 }
