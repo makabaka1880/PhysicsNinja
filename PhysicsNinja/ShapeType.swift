@@ -18,7 +18,7 @@ enum ShapeType: Int {
     case tube       = 7
     
     static var random: Self {
-        let ran: Int = .random(in: 1...8)
+        let ran: Int = .random(in: 0...7)
         return .init(rawValue: ran)!
     }
 }

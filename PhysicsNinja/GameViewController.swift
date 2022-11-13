@@ -107,7 +107,12 @@ class GameViewController: UIViewController {
         case .tube:
             geometry = SCNTube(innerRadius: 1, outerRadius: 1.25, height: 1.5)
         }
+        
         let geoNode = SCNNode(geometry: geometry)
+        geoNode.position.y = -10
+        geoNode.physicsBody = .init(type: .dynamic, shape: nil)
+        geoNode.physicsBody?.applyForce(.init(-1, 10, 0), asImpulse: true)
+        
         print(geoNode.geometry)
         loadNode(geoNode)
     }
