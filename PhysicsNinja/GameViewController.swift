@@ -11,6 +11,9 @@ import SceneKit
 
 class GameViewController: UIViewController {
 
+    var scnView: SCNView!
+    var scnScene: SCNScene!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,5 +29,8 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    // MARK: SetupView()
+    func setupView() {
+        scnView = (self.view as! SCNView)
+    }
 }
