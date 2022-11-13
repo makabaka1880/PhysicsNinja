@@ -42,6 +42,11 @@ class GameViewController: UIViewController {
     // MARK: SetupView()
     func setupView() {
         scnView = (self.view as! SCNView)
+        scnView.showsStatistics = true
+        scnView.allowsCameraControl = true
+        scnView.pointOfView = camNode
+        scnView.autoenablesDefaultLighting = true
+        
     }
     // MARK: SetupScene()
     func setupScene() {
@@ -96,6 +101,7 @@ class GameViewController: UIViewController {
             )
         }
         let geoNode = SCNNode(geometry: geometry)
+        
         print(geoNode.geometry)
         loadNode(geoNode)
     }
