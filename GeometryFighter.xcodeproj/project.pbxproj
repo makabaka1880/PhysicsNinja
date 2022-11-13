@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		77997FCB29210BDF00F7CD7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77997FCA29210BDF00F7CD7A /* AppDelegate.swift */; };
-		77997FCD29210BDF00F7CD7A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 77997FCC29210BDF00F7CD7A /* art.scnassets */; };
 		77997FCF29210BDF00F7CD7A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77997FCE29210BDF00F7CD7A /* GameViewController.swift */; };
 		77997FD229210BDF00F7CD7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77997FD029210BDF00F7CD7A /* Main.storyboard */; };
 		77997FD429210BE000F7CD7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77997FD329210BE000F7CD7A /* Assets.xcassets */; };
@@ -16,9 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		77997FC729210BDF00F7CD7A /* PhysicsNinja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhysicsNinja.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77997FC729210BDF00F7CD7A /* GeometryFighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeometryFighter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77997FCA29210BDF00F7CD7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77997FCC29210BDF00F7CD7A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		77997FCE29210BDF00F7CD7A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		77997FD129210BDF00F7CD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77997FD329210BE000F7CD7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,7 +45,7 @@
 		77997FC829210BDF00F7CD7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				77997FC729210BDF00F7CD7A /* PhysicsNinja.app */,
+				77997FC729210BDF00F7CD7A /* GeometryFighter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				77997FCA29210BDF00F7CD7A /* AppDelegate.swift */,
-				77997FCC29210BDF00F7CD7A /* art.scnassets */,
 				77997FCE29210BDF00F7CD7A /* GameViewController.swift */,
 				77997FD029210BDF00F7CD7A /* Main.storyboard */,
 				77997FD329210BE000F7CD7A /* Assets.xcassets */,
@@ -68,9 +65,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		77997FC629210BDF00F7CD7A /* PhysicsNinja */ = {
+		77997FC629210BDF00F7CD7A /* GeometryFighter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77997FDA29210BE000F7CD7A /* Build configuration list for PBXNativeTarget "PhysicsNinja" */;
+			buildConfigurationList = 77997FDA29210BE000F7CD7A /* Build configuration list for PBXNativeTarget "GeometryFighter" */;
 			buildPhases = (
 				77997FC329210BDF00F7CD7A /* Sources */,
 				77997FC429210BDF00F7CD7A /* Frameworks */,
@@ -80,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = PhysicsNinja;
+			name = GeometryFighter;
 			productName = PhysicsNinja;
-			productReference = 77997FC729210BDF00F7CD7A /* PhysicsNinja.app */;
+			productReference = 77997FC729210BDF00F7CD7A /* GeometryFighter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +97,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 77997FC229210BDF00F7CD7A /* Build configuration list for PBXProject "PhysicsNinja" */;
+			buildConfigurationList = 77997FC229210BDF00F7CD7A /* Build configuration list for PBXProject "GeometryFighter" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,7 +110,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77997FC629210BDF00F7CD7A /* PhysicsNinja */,
+				77997FC629210BDF00F7CD7A /* GeometryFighter */,
 			);
 		};
 /* End PBXProject section */
@@ -123,7 +120,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77997FCD29210BDF00F7CD7A /* art.scnassets in Resources */,
 				77997FD729210BE000F7CD7A /* LaunchScreen.storyboard in Resources */,
 				77997FD429210BE000F7CD7A /* Assets.xcassets in Resources */,
 				77997FD229210BDF00F7CD7A /* Main.storyboard in Resources */,
@@ -337,7 +333,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		77997FC229210BDF00F7CD7A /* Build configuration list for PBXProject "PhysicsNinja" */ = {
+		77997FC229210BDF00F7CD7A /* Build configuration list for PBXProject "GeometryFighter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77997FD829210BE000F7CD7A /* Debug */,
@@ -346,7 +342,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77997FDA29210BE000F7CD7A /* Build configuration list for PBXNativeTarget "PhysicsNinja" */ = {
+		77997FDA29210BE000F7CD7A /* Build configuration list for PBXNativeTarget "GeometryFighter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				77997FDB29210BE000F7CD7A /* Debug */,
