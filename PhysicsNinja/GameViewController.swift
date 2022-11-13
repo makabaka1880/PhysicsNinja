@@ -62,46 +62,52 @@ class GameViewController: UIViewController {
         loadNode(camNode)
     }
     // MARK: SpawnShape()
+    
     func spawnShape() {
         var geometry: SCNGeometry
-       //  var t: ShapeType = .torus
-//        switch t {
-//        case .box:
-//            geometry = SCNBox(
-//                width: 1,
-//                height: 1,
-//                length: 1,
-//                chamferRadius: 0
-//            )
-//        case .sphere:
-//        geometry = SCNSphere(
-//            radius: 1
-//        )
-//        case .pyramid:
-//            <#code#>
-//        case .torus:
-//            <#code#>
-//        case .capsule:
-//            <#code#>
-//        case .cylinder:
-//            <#code#>
-//        case .cone:
-//            <#code#>
-//        case .tube:
-//            <#code#>
-//        }
         switch ShapeType.random {
-        
-        default:
+        case .box:
             geometry = SCNBox(
                 width: 1,
                 height: 1,
                 length: 1,
                 chamferRadius: 0
             )
+        case .sphere:
+            geometry = SCNSphere(
+                radius: 1
+            )
+        case .pyramid:
+            geometry = SCNPyramid(
+                width: 1,
+                height: 1,
+                length: 1
+            )
+        case .torus:
+            geometry = SCNTorus(
+                ringRadius: 1.5,
+                pipeRadius: 1
+            )
+        case .capsule:
+            geometry = SCNCapsule(
+                capRadius: 1.5,
+                height: 1
+            )
+        case .cylinder:
+            geometry = SCNCylinder(
+                radius: 1,
+                height: 1.5
+            )
+        case .cone:
+            geometry = SCNCone(
+                topRadius: 0,
+                bottomRadius: 1,
+                height: 1.5
+            )
+        case .tube:
+            geometry = SCNTube(innerRadius: 1, outerRadius: 1.25, height: 1.5)
         }
         let geoNode = SCNNode(geometry: geometry)
-        
         print(geoNode.geometry)
         loadNode(geoNode)
     }
