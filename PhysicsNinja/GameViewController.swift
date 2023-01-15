@@ -72,7 +72,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         
         scnView = (self.view as! SCNView)
         scnView.showsStatistics = true
-        scnView.allowsCameraControl = true
+        scnView.allowsCameraControl = false
         scnView.pointOfView = camNode
         scnView.autoenablesDefaultLighting = true
         
@@ -167,8 +167,27 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
             geoNode.removeFromParentNode()
         }
     }
+    
+    // MARK: HandleTouchFor()
+    func handleTouchFor(node: SCNNode) {
+        if node.name == "GOOD" {
+            game.score += 1
+            node.removeFromParentNode()
+        } else if node.name == "BAD" {
+            game.score -= 1
+            node.removeFromParentNode()
+        } else {
+            fatalError("NODE NOT IDENTIFIED: \(node), Named \(node.name)")
+        }
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        let touch = touches.first!
+        let loc = touch.location(in: scnView)
+        let hitReults = scnView.hitTest(loc)
+        if let result = hitReults.first {
+            handleTouchFor(node: result.node)
+        }
     }
 }
 
