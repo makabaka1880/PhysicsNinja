@@ -155,7 +155,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         geoNode.physicsBody?.applyForce(.init(-offset*2/3, 25, 0), asImpulse: true)
         geoNode.geometry?.firstMaterial?.diffuse.contents = ran
         print(geoNode.geometry)
-        if ran == .black {
+        if [.black, .red, .blue].contains(ran) {
             geoNode.name = "BAD"
         } else {
             geoNode.name = "GOOD"
@@ -176,7 +176,7 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
         } else if node.name == "BAD" {
             game.score -= 1
             node.removeFromParentNode()
-        } else {
+        } else if node.name != "HUD" {
             fatalError("NODE NOT IDENTIFIED: \(node), Named \(node.name)")
         }
     }
