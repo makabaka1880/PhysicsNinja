@@ -78,7 +78,7 @@ class GameHelper {
   func updateHUD() {
     let scoreFormatted = String(format: "%0\(4)d", score)
     let highScoreFormatted = String(format: "%0\(4)d", highScore)
-    labelNode.text = "❤️\(lives)  😎\(highScoreFormatted) 💥\(scoreFormatted)"
+    labelNode.text = "L\(lives)  HS\(highScoreFormatted) S\(scoreFormatted)"
   }
   
   func loadSound(_ name:String, fileNamed:String) {

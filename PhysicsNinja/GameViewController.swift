@@ -9,18 +9,34 @@ import UIKit
 import QuartzCore
 import SceneKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, SCNSceneRendererDelegate {
+    
+    var deltat: TimeInterval = 0
+    var dt: TimeInterval = 1
+    
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime t: TimeInterval) {
+        if t > deltat {
+            spawnShape()
+            game.updateHUD()
+            deltat = t + dt
+            dt = .random(in: 0...5)
+        }
+        game.updateHUD()
+        cleanScene()
+    }
 
     var scnView: SCNView!
     var scnScene: SCNScene!
     var camNode: SCNNode!
-    
+    var game = GameHelper.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupScene()
         setupCam()
         spawnShape()
+        setupHUD()
+        scnView.delegate = self
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -39,14 +55,32 @@ class GameViewController: UIViewController {
         scnScene.rootNode.addChildNode(node)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        spawnShape()
+    }
+    
+    func cleanScene() {
+        for i in scnScene.rootNode.childNodes {
+            if i.presentation.position.y < -20 {
+                i.removeFromParentNode()
+            }
+        }
+    }
+    
     // MARK: SetupView()
     func setupView() {
+        
         scnView = (self.view as! SCNView)
         scnView.showsStatistics = true
         scnView.allowsCameraControl = true
         scnView.pointOfView = camNode
         scnView.autoenablesDefaultLighting = true
         
+    }
+    // MARK: SetupHUD()
+    func setupHUD() {
+        game.hudNode.position = SCNVector3(0, 0, 0)
+        scnScene.rootNode.addChildNode(game.hudNode)
     }
     // MARK: SetupScene()
     func setupScene() {
@@ -58,7 +92,8 @@ class GameViewController: UIViewController {
     func setupCam() {
         camNode = SCNNode()
         camNode.camera = SCNCamera()
-        camNode.position = .init(0, 0, 10)
+        camNode.position = .init(0, 5, 10)
+        camNode.camera?.fieldOfView = 90
         loadNode(camNode)
     }
     // MARK: SpawnShape()
@@ -109,11 +144,36 @@ class GameViewController: UIViewController {
         }
         
         let geoNode = SCNNode(geometry: geometry)
-        geoNode.position.y = -10
+        var offset = Float.random(in: -50...50)
+        var particle = SCNParticleSystem(named: "Trail.scnp", inDirectory: nil)
+        let ran = UIColor.random()
+        particle?.particleColor = ran
+        geoNode.addParticleSystem(particle!)
+        geoNode.position.y = -20
+        geoNode.position.x = offset
         geoNode.physicsBody = .init(type: .dynamic, shape: nil)
-        geoNode.physicsBody?.applyForce(.init(-1, 10, 0), asImpulse: true)
-        
+        geoNode.physicsBody?.applyForce(.init(-offset*2/3, 25, 0), asImpulse: true)
+        geoNode.geometry?.firstMaterial?.diffuse.contents = ran
         print(geoNode.geometry)
+        if ran == .black {
+            geoNode.name = "BAD"
+        } else {
+            geoNode.name = "GOOD"
+        }
         loadNode(geoNode)
+        
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15) {
+            geoNode.removeFromParentNode()
+        }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
     }
 }
+
+//extension GameViewController: SCNSceneRendererDelegate {
+//    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+//        spawnShape()
+//    }
+//}
