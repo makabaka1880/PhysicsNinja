@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7743FBD429211BAC00E7B556 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7743FBD329211BAC00E7B556 /* ShapeType.swift */; };
+		777AB3E2297407D4005BF7AC /* Explode.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 777AB3E1297407D4005BF7AC /* Explode.scnp */; };
+		777AB3E5297411D2005BF7AC /* Trail.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 777AB3E4297411D2005BF7AC /* Trail.scnp */; };
 		77902B5A29212A6F00D0391A /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77902B5329212A6F00D0391A /* UIColor+Extensions.swift */; };
 		77902B5B29212A6F00D0391A /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77902B5429212A6F00D0391A /* GameHelper.swift */; };
 		77902B5D29212A6F00D0391A /* SCNAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77902B5629212A6F00D0391A /* SCNAction+Extensions.swift */; };
@@ -19,13 +21,14 @@
 		77997FEC2921118F00F7CD7A /* GeometryFighter.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 77997FEB2921118F00F7CD7A /* GeometryFighter.scnassets */; };
 		77E91F12293CB78500074FA8 /* File.s in Sources */ = {isa = PBXBuildFile; fileRef = 7743FBD12921191A00E7B556 /* File.s */; };
 		77E91F16293CC52700074FA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E91F14293CC52700074FA8 /* Assets.xcassets */; };
-		77E91F19293CC64500074FA8 /* Trail.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 77E91F17293CC64500074FA8 /* Trail.scnp */; };
 		77E91F1A293CC64500074FA8 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 77E91F18293CC64500074FA8 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7743FBD12921191A00E7B556 /* File.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = File.s; sourceTree = "<group>"; };
 		7743FBD329211BAC00E7B556 /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
+		777AB3E1297407D4005BF7AC /* Explode.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Explode.scnp; sourceTree = "<group>"; };
+		777AB3E4297411D2005BF7AC /* Trail.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Trail.scnp; sourceTree = "<group>"; };
 		77902B5329212A6F00D0391A /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		77902B5429212A6F00D0391A /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
 		77902B5629212A6F00D0391A /* SCNAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNAction+Extensions.swift"; sourceTree = "<group>"; };
@@ -37,8 +40,7 @@
 		77997FD629210BE000F7CD7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77997FEB2921118F00F7CD7A /* GeometryFighter.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = GeometryFighter.scnassets; sourceTree = "<group>"; };
 		77E91F14293CC52700074FA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77E91F17293CC64500074FA8 /* Trail.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; name = Trail.scnp; path = Paritcal/Trail.scnp; sourceTree = SOURCE_ROOT; };
-		77E91F18293CC64500074FA8 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = Paritcal/spark.png; sourceTree = SOURCE_ROOT; };
+		77E91F18293CC64500074FA8 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = PhysicsNinja/Particle/spark.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		777AB3E3297411B5005BF7AC /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				77E91F18293CC64500074FA8 /* spark.png */,
+				777AB3E4297411D2005BF7AC /* Trail.scnp */,
+				777AB3E1297407D4005BF7AC /* Explode.scnp */,
+			);
+			path = Particle;
+			sourceTree = "<group>";
+		};
 		77902B5F29212A7600D0391A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,8 +97,7 @@
 				77997FEB2921118F00F7CD7A /* GeometryFighter.scnassets */,
 				77997FCA29210BDF00F7CD7A /* AppDelegate.swift */,
 				7743FBD12921191A00E7B556 /* File.s */,
-				77E91F18293CC64500074FA8 /* spark.png */,
-				77E91F17293CC64500074FA8 /* Trail.scnp */,
+				777AB3E3297411B5005BF7AC /* Particle */,
 				77997FCE29210BDF00F7CD7A /* GameViewController.swift */,
 				7743FBD329211BAC00E7B556 /* ShapeType.swift */,
 				77997FD029210BDF00F7CD7A /* Main.storyboard */,
@@ -155,13 +166,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				777AB3E5297411D2005BF7AC /* Trail.scnp in Resources */,
 				77997FD729210BE000F7CD7A /* LaunchScreen.storyboard in Resources */,
 				77997FD429210BE000F7CD7A /* Assets.xcassets in Resources */,
 				77997FD229210BDF00F7CD7A /* Main.storyboard in Resources */,
 				77E91F1A293CC64500074FA8 /* spark.png in Resources */,
 				77997FEC2921118F00F7CD7A /* GeometryFighter.scnassets in Resources */,
-				77E91F19293CC64500074FA8 /* Trail.scnp in Resources */,
 				77E91F16293CC52700074FA8 /* Assets.xcassets in Resources */,
+				777AB3E2297407D4005BF7AC /* Explode.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

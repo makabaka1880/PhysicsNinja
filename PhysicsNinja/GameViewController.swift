@@ -172,13 +172,39 @@ class GameViewController: UIViewController, SCNSceneRendererDelegate {
     func handleTouchFor(node: SCNNode) {
         if node.name == "GOOD" {
             game.score += 1
-            node.removeFromParentNode()
+            createExplosion(geometry: node.geometry!, pos: node.presentation.position, rotation: .init(x: 0, y: 0, z: 0, w: 0), color: node.geometry!.firstMaterial!.diffuse.contents as! UIColor)
         } else if node.name == "BAD" {
             game.score -= 1
-            node.removeFromParentNode()
         } else if node.name != "HUD" {
             fatalError("NODE NOT IDENTIFIED: \(node), Named \(node.name)")
         }
+        createExplosion(geometry: node.geometry!, pos: node.presentation.position, rotation: node.rotation, color: node.geometry!.firstMaterial!.diffuse.contents as! UIColor)
+        node.removeFromParentNode()
+    }
+    
+    
+    // MARK: CreateExplosion()
+    func createExplosion(geometry: SCNGeometry, pos: SCNVector3, rotation: SCNVector4, color: UIColor) {
+        let particle = SCNParticleSystem(named: "Explode.scnp", inDirectory: nil)!
+        particle.emitterShape = geometry
+        particle.birthLocation = .surface
+        
+        let transformationMatrix = SCNMatrix4MakeRotation(
+            rotation.w,
+            rotation.x,
+            rotation.y,
+            rotation.z
+        )
+        
+        let translationMatrix = SCNMatrix4MakeTranslation(
+            pos.x,
+            pos.y,
+            pos.z
+        )
+        
+        scnScene.addParticleSystem(particle, transform: SCNMatrix4Mult(transformationMatrix, translationMatrix))
+        
+        particle.particleColor = color
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
